@@ -20,7 +20,7 @@ def loadFlirts():
 
 	try:
 		# load FLIRT signatures from local flirt directory
-		flirtDir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'flirt')
+		flirtDir = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'signatures')
 		sigFiles = [f for f in os.listdir(flirtDir) if os.path.isfile(os.path.join(flirtDir, f))]
 		
 		for sigFile in sigFiles:
