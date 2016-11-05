@@ -1,0 +1,97 @@
+* 2016-10-22 13:57:58.981259 R2 started analysis 
+* 2016-10-22 13:57:59.255685 R2 finished analysis 
+DANGLING call to address outside code section, glob var, dynamic API loading 0x401d1e -> 0x40d110
+DANGLING call to address outside code section, glob var, dynamic API loading 0x401d1e -> 0x40d110
+DANGLING call to address outside code section, glob var, dynamic API loading 0x401d29 -> 0x40d110
+DANGLING call to address outside code section, glob var, dynamic API loading 0x401d29 -> 0x40d110
+DANGLING call to address outside code section, glob var, dynamic API loading 0x4053a5 -> 0x40f920
+DANGLING call to address outside code section, glob var, dynamic API loading 0x4053a5 -> 0x40f920
+* 2016-10-22 13:58:00.139132 Graph created with NetworkX 
+* 2016-10-22 13:58:01.368531 Graph extended with API calls, 179 calls in total, 0 dangling w/o function reference 
+* 2016-10-22 13:58:01.540143 Graph extended with string references 
+* 2016-10-22 13:58:01.541155 Printing the graph - nodes and node attributes
+.
+General graph info:
+SAMPLE 79a26b420ec901423b46ac5e5399ad00c4923a68c9f06233c6214ca3aba6b1a9
+Type: PE32 executable (GUI) Intel 80386, for MS Windows
+Size: 65536
+MD5: 46d030b4253fa7911c3748f04420d1c4
+Name: 
+Type: DiGraph
+Number of nodes: 115
+Number of edges: 167
+Average in degree:   1.4522
+Average out degree:   1.4522
+.
+Graph measurement data:
+   116 Total functions detected with 'aflj'
+   265 Count of references to local functions
+     6 Count of references to data section, global variables
+     0 Count of references to unrecognized locations
+   179 Total API refs found via symbol xref check
+     0 Count APIs w/o function xref
+    57 Total referenced Strings
+     0 Count of dangling strings (w/o function reference)
+   570 Count of strings w/o any reference
+.
+Fat node detection with out-degree centrality, count calls, count strings:
+0x40613f 0.105263 5 0
+0x401c33 0.096491 4 1
+0x405ef9 0.078947 1 1
+0x403e69 0.070175 3 9
+0x401618 0.061404 30 3
+0x401e61 0.052632 3 4
+0x403513 0.052632 0 0
+0x403d01 0.043860 3 3
+0x401b18 0.035088 1 0
+0x4035cc 0.035088 1 0
+0x4011e4 0.035088 9 2
+0x404b17 0.035088 1 2
+0x403bf0 0.026316 0 2
+0x405644 0.026316 0 1
+0x403819 0.026316 8 2
+0x4060d8 0.026316 0 0
+0x401d1e 0.026316 0 0
+0x406452 0.026316 0 0
+0x402e45 0.026316 1 0
+0x401fa9 0.026316 2 0
+.
+Histogram of out degree centrality:
+0.0 0.0005 0.001 0.0015 0.002 0.004 0.006 0.008 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.2 0.3 0.4 0.5 
+51 0 0 0 0 0 0 27 15 10 4 1 2 1 2 0 1 1 0 0 0 
+.
+Loose nodes 14 of total 115, thats 12.173913%
+.
+ExecSize FunctionCount ApiCount StringCount
+24576 116 179 57
+Per-Kilobyte ratio
+4.72005208333 7.28352864583 2.3193359375
+.
+Average degree connectivity per degree k:
+  0 0.000000
+  1 0.137931
+  2 0.940000
+  3 2.280702
+  4 2.633333
+  5 1.433333
+  6 1.083333
+  7 3.857143
+  8 4.375000
+  9 3.166667
+ 10 3.400000
+ 11 3.909091
+ 12 0.250000
+ 13 3.615385
+.
+Found 3 calls to GetProcAddress
+.
+* 2016-10-22 13:58:05.179154 Dumped to Neo4J 
+* 2016-10-22 13:58:05.179173 Scanning for API patterns 
+For REGSETVAL found {'RegOpenKey': '0x4011c0', 'RegSetValue': '0x4011e4'}
+For CREATEPROC found {'CreateProcess': '0x401000'}
+For CREATEPROC found {'CreateProcess': '0x4013c5'}
+For READFILE found {'CreateFile': '0x401618', 'ReadFile': '0x401618'}
+For APILOADING found {'GetProcAddress': '0x4053a5', 'LoadLibrary': '0x4053a5'}
+For WRITEFILE found {'WriteFile': '0x401618', 'CreateFile': '0x401618'}
+For WINEXEC found {'WinExec': '0x401618'}
+* 2016-10-22 13:58:05.181795 Scan finished 

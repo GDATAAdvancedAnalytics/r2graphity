@@ -1,0 +1,107 @@
+* 2016-10-21 21:37:48.951404 R2 started analysis 
+* 2016-10-21 21:37:49.656135 R2 finished analysis 
+DANGLING call to address outside code section, glob var, dynamic API loading 0x10004550 -> 0x1000b200
+* 2016-10-21 21:37:50.955467 Graph created with NetworkX 
+* 2016-10-21 21:37:52.777888 Graph extended with API calls, 238 calls in total, 0 dangling w/o function reference 
+* 2016-10-21 21:37:53.169808 Graph extended with string references 
+* 2016-10-21 21:37:53.229584 Printing the graph - nodes and node attributes
+.
+General graph info:
+SAMPLE c3f8690087a454fa45e8975fd0b8b0b76aba554f540d7c2c98d3e15512268b52
+Type: PE32 executable (DLL) (GUI) Intel 80386, for MS Windows
+Size: 71168
+MD5: a372c78309a2a521ac4d6899d0ef2369
+Name: 
+Type: DiGraph
+Number of nodes: 134
+Number of edges: 170
+Average in degree:   1.2687
+Average out degree:   1.2687
+.
+Graph measurement data:
+   157 Total functions detected with 'aflj'
+   344 Count of references to local functions
+     1 Count of references to data section, global variables
+     0 Count of references to unrecognized locations
+   238 Total API refs found via symbol xref check
+     0 Count APIs w/o function xref
+   180 Total referenced Strings
+     0 Count of dangling strings (w/o function reference)
+   438 Count of strings w/o any reference
+.
+Fat node detection with out-degree centrality, count calls, count strings:
+0x10003080 0.172932 23 29
+0x100023a0 0.142857 13 14
+0x10002210 0.075188 4 4
+0x10007dd0 0.060150 0 0
+0x10005ea0 0.045113 0 21
+0x10004550 0.045113 0 1
+0x100058d0 0.037594 0 4
+0x10005320 0.037594 0 2
+0x10001410 0.037594 3 3
+0x10002060 0.030075 6 6
+0x10002710 0.030075 1 1
+0x10002b30 0.030075 1 1
+0x100044c0 0.030075 0 0
+0x100040e0 0.022556 0 1
+0x10001200 0.022556 3 1
+0x10003750 0.022556 5 3
+0x10005020 0.022556 0 0
+0x100041b0 0.022556 0 1
+0x10003890 0.022556 1 2
+0x10007fe0 0.022556 0 0
+.
+Histogram of out degree centrality:
+0.0 0.0005 0.001 0.0015 0.002 0.004 0.006 0.008 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.2 0.3 0.4 0.5 
+79 0 0 0 0 0 25 0 9 8 7 2 0 1 1 0 0 2 0 0 0 
+.
+Loose nodes 24 of total 134, thats 17.910448%
+.
+ExecSize FunctionCount ApiCount StringCount
+37888 157 238 180
+Per-Kilobyte ratio
+4.14379222973 6.2816722973 4.75084459459
+.
+Average degree connectivity per degree k:
+  0 0.000000
+  1 0.358491
+  2 1.153846
+  3 2.416667
+  4 0.863636
+  5 2.777778
+  6 0.833333
+  7 2.285714
+  8 1.375000
+ 10 0.900000
+ 11 3.000000
+ 20 3.250000
+ 24 3.958333
+.
+Found 4 calls to GetProcAddress
+.
+* 2016-10-21 21:37:59.756642 Dumped to Neo4J 
+* 2016-10-21 21:37:59.756664 Scanning for API patterns 
+For RECV found {'recv': '0x10003a40', 'send': '0x10003a40'}
+For FPRINT found {'fclose': '0x10004060', 'fopen': '0x10004060', 'fprintf': '0x10004060'}
+For CREATETHREAD found {'CreateThread': '0x10002010'}
+For CREATETHREAD found {'CreateThread': '0x10003080'}
+For CREATETHREAD found {'CreateThread': '0x10001bb0'}
+For CREATETHREAD found {'CreateThread': '0x100034f0'}
+For CREATETHREAD found {'CreateThread': '0x10002030'}
+For CREATEPROC found {'CreateProcess': '0x10001cd0'}
+For READFILE found {'CreateFile': '0x10003dc0', 'ReadFile': '0x10003dc0'}
+For READFILE found {'CreateFile': '0x10002ce0', 'ReadFile': '0x10002ce0'}
+For EXITSYSTEM found {'ExitWindows': '0x10002a20'}
+For EXITSYSTEM found {'ExitWindows': '0x10002aa0'}
+For REGQUERY found {'RegQueryValue': '0x10001790', 'RegOpenKey': '0x10001790'}
+For SHELLEXEC found {'ShellExecute': '0x10002960'}
+For SHELLEXEC found {'ShellExecute': '0x10002930'}
+For APILOADING found {'GetProcAddress': '0x10003f40', 'LoadLibrary': '0x10003f40'}
+For APILOADING found {'GetProcAddress': '0x10002e40', 'LoadLibrary': '0x10002e40'}
+For APILOADING found {'GetProcAddress': '0x10001cd0', 'LoadLibrary': '0x10001cd0'}
+For APILOADING found {'GetProcAddress': '0x10001be0', 'LoadLibrary': '0x10001be0'}
+For FILEITER found {'FindNextFile': '0x100027b0', 'FindClose': '0x100027b0', 'FindFirstFile': '0x100027b0'}
+For FILEITER found {'FindNextFile': '0x10001290', 'FindClose': '0x10001290', 'FindFirstFile': '0x10001290'}
+For WRITEFILE found {'WriteFile': '0x10002f90', 'CreateFile': '0x10002f90'}
+For WRITEFILE found {'WriteFile': '0x10002db0', 'CreateFile': '0x10002db0'}
+* 2016-10-21 21:37:59.760701 Scan finished 

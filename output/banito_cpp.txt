@@ -1,0 +1,101 @@
+* 2016-10-18 19:13:43.319959 R2 started analysis 
+* 2016-10-18 19:14:04.466698 R2 finished analysis 
+DANGLING call to address outside code section, glob var, dynamic API loading 0x42e960 -> 0x437718
+* 2016-10-18 19:14:05.059362 Graph created with NetworkX 
+* 2016-10-18 19:14:10.907997 Graph extended with API calls, 34 calls in total, 0 dangling w/o function reference 
+* 2016-10-18 19:14:11.754323 Graph extended with string references 
+.
+General graph info:
+SAMPLE banito.bin
+Type: PE32 executable (GUI) Intel 80386, for MS Windows
+Size: 275883
+MD5: 172aed81c4fde1cf23f1615acedfad65
+Name: 
+Type: DiGraph
+Number of nodes: 1374
+Number of edges: 1415
+Average in degree:   1.0298
+Average out degree:   1.0298
+.
+Graph measurement data:
+  1386 Total functions detected with 'aflj'
+  2826 Count of references to local functions
+     1 Count of references to data section, global variables
+     0 Count of references to unrecognized locations
+    34 Total API refs found via symbol xref check
+     0 Count APIs w/o function xref
+    53 Total referenced Strings
+     0 Count of dangling strings (w/o function reference)
+  2922 Count of strings w/o any reference
+.
+Fat node detection with out-degree centrality, count calls, count strings:
+0x421bd9 0.032775 25 1
+0x42605f 0.016752 16 0
+0x401040 0.015295 11 1
+0x427fb3 0.012382 2 1
+0x4228c6 0.012382 2 0
+0x4270fe 0.010197 2 1
+0x428834 0.009468 3 1
+0x410a40 0.009468 0 0
+0x424f6d 0.008740 3 0
+0x427816 0.008740 1 0
+0x42ae52 0.008740 19 0
+0x4255a5 0.008740 3 0
+0x427bb8 0.008012 3 2
+0x426ada 0.008012 2 0
+0x426dea 0.008012 2 1
+0x4259f6 0.008012 2 1
+0x42d1f0 0.008012 1 0
+0x428a91 0.008012 3 0
+0x42d569 0.008012 2 0
+0x42dacb 0.007283 4 0
+.
+Histogram of out degree centrality:
+0.0 0.0005 0.001 0.0015 0.002 0.004 0.006 0.008 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.2 0.3 0.4 0.5 
+751 439 52 0 78 17 18 13 5 0 1 0 0 0 0 0 0 0 0 0 0 
+.
+Loose nodes 721 of total 1374, thats 52.474527%
+.
+ExecSize FunctionCount ApiCount StringCount
+221184 1386 34 53
+Per-Kilobyte ratio
+6.26627604167 0.153718171296 0.239619502315
+.
+Average degree connectivity per degree k:
+  0 0.000000
+  1 11.483491
+  2 10.856502
+  3 10.114379
+  4 9.581633
+  5 13.538095
+  6 15.541667
+  7 12.670330
+  8 18.000000
+  9 1.629630
+ 10 17.106667
+ 11 14.393939
+ 12 9.154762
+ 13 6.200000
+ 14 5.785714
+ 15 2.733333
+ 17 12.764706
+ 22 2.454545
+ 23 5.152174
+ 25 0.120000
+ 27 0.148148
+ 39 0.076923
+ 45 6.266667
+ 53 0.000000
+ 65 0.015385
+116 0.000000
+.
+Found 1 calls to GetProcAddress
+.
+* 2016-10-18 19:14:13.391371 Plotting routine starting 
+dot: graph is too large for cairo-renderer bitmaps. Scaling by 0.181638 to fit
+
+* 2016-10-18 19:14:21.854261 Plotting routine finished 
+* 2016-10-18 19:14:51.634648 Dumped to Neo4J 
+* 2016-10-18 19:14:51.634672 Scanning for API patterns 
+For APILOADING found {'GetProcAddress': '0x402db0', 'LoadLibrary': '0x402db0'}
+* 2016-10-18 19:14:51.654236 Scan finished 
