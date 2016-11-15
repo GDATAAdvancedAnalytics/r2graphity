@@ -7,6 +7,7 @@ funcDict = {
 	'CREATETHREAD': ['CreateThread'],
 	'PROCESSITER': ['CreateToolhelp32Snapshot', 'Process32First', 'Process32Next'],
 	'APILOADING': ['LoadLibrary', 'GetProcAddress'],
+	'APILOADING2': ['GetModuleHandle', 'GetProcAddress'],
 	'WRITEFILE': ['CreateFile', 'WriteFile'],
 	'READFILE': ['CreateFile', 'ReadFile'],
 	'WINHOOK': ['SetWindowsHookEx'],
@@ -35,7 +36,7 @@ funcDict = {
 
 
 
-
+ 
 # TODO extend on those, and add moarrr:
 # spawn a process
 # execute a file

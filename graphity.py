@@ -329,7 +329,7 @@ def createSeGraph():
 
 		# detected API call reference does not resolve to a function offset, insert handling for this here
 		else:
-			print "DANGLING API CALL %s %s" % (funcAddress, apiRefs[call])
+			print "DANGLING API CALL %s %s" % (call, apiRefs[call])
 			missesNum = missesNum+1
 	
 	# debug: print total API refs and functionless API refs, maybe indicator for obfuscated code
@@ -393,6 +393,7 @@ def thunkPruning(graphity):
 			# getting all xrefs on thunk, then getting function its located in to get to node of graph
 			temp = R2PY.cmd("axtj " + thunk)
 			
+			thunkRefs = []
 			if temp:
 				thunkRefs = json.loads(temp)
 				
@@ -565,8 +566,8 @@ if __name__ == '__main__':
 	
 		#loadZigs()
 		R2PY.cmd("aaa")
-		R2PY.cmd("afr")
-		R2PY.cmd("afr @@ sym*")
+		#R2PY.cmd("afr")
+		#R2PY.cmd("afr @@ sym*")
 
 		bench['r2_end'] = time()
 		print '* %s R2 finished analysis' % str(datetime.now())
