@@ -25,12 +25,20 @@ Dependencies
 ============
 
 radare2		https://github.com/radare/radare2
+
 r2pipe		https://github.com/radare/radare2/wiki/R2PipeAPI
+
 NetworkX		https://github.com/networkx/
+
 Neo4j			https://neo4j.com/download/
+
 py2neo		http://py2neo.org/v3/
+
 numpy			https://github.com/numpy/numpy
+
 pefile		https://github.com/erocarrera/pefile
+
 pydeep		https://github.com/kbandla/pydeep
+
 
 Watch out to install radare2 from the git repository, do not use the Debian package. 
