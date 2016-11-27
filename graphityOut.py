@@ -128,6 +128,24 @@ def printGraphInfo(graphity, debug):
 	print "%6d Count of dangling strings (w/o function reference)" % debug['stringsDanglingTotal']
 	print "%6d Count of strings w/o any reference" % debug['stringsNoRefTotal']
 	
+	# PE DETAILS
+	
+	print ".\nPE details:"
+	print "Imphash:\t\t" + allAtts['imphash'] 
+	print "Compilation time:\t" + allAtts['compilationts'] 
+	print "Entrypoint address:\t" + hex(allAtts['addressep'])
+	print "Entrypoint section:\t" + allAtts['sectionep'] 
+	print "TLS section count:\t" + str(allAtts['tlssections']) 
+	print "Original filename:\t" + allAtts['originalfilename']
+	print "Section count:\t\t" + str(allAtts['sectioncount'])
+	print "Section details:" #+ str(allAtts['sectioninfo'])
+	
+	i=0
+	while i < allAtts['sectioncount'] and i < 12:
+		print "%8s %8d %s" % (allAtts['sectioninfo'][i], allAtts['sectioninfo'][i+12], allAtts['sectioninfo'][i+24])
+		i = i + 1
+	
+	
 	# TODO resources list
 	
 	

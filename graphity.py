@@ -566,8 +566,8 @@ if __name__ == '__main__':
 	
 		#loadZigs()
 		R2PY.cmd("aaa")
-		#R2PY.cmd("afr")
-		#R2PY.cmd("afr @@ sym*")
+		R2PY.cmd("afr")
+		R2PY.cmd("afr @@ sym*")
 
 		bench['r2_end'] = time()
 		print '* %s R2 finished analysis' % str(datetime.now())

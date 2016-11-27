@@ -149,6 +149,45 @@ def getCodeSectionSize(pe):
 	for section in pe.sections:
 		print section		
 
+def getSectionInfo(pe):
+
+	# Section info: names, sizes, entropy vals
+	sects = []
+	vadd = []
+	ent = []
+	secnumber = getSectionCount(pe)
+
+	for i in range(12):
+
+		if (i + 1 > secnumber):
+			strip = ""
+			strap = ""
+			entropy = ""
+
+		else:
+			stuff = pe.sections[i]
+			strip = stuff.Name.replace('\x00', '')
+			strap = str(stuff.SizeOfRawData).replace('\x00', '')
+
+			entropy = Hvalue(stuff.get_data())
+
+		section_name = ""
+		try:
+			section_name = strip.decode("ascii", "ignore")
+		except:
+			section_name = "PARSINGERR"
+
+		sects.append(section_name)
+		ent.append(entropy)
+		if strap.isdigit():
+			vadd.append(int(strap))
+		else:
+			vadd.append('')
+
+	secinfo = sects + vadd + ent
+	return secinfo
+	
+	
 	
 def getAllAttributes(path):
 	
@@ -169,6 +208,7 @@ def getAllAttributes(path):
 			allAtts['addressep'] = getEPAddress(pe)
 			allAtts['sectionep'] = getEPSection(pe)
 			allAtts['sectioncount'] = getSectionCount(pe)
+			allAtts['sectioninfo'] = getSectionInfo(pe)
 			allAtts['tlssections'] = getTLSSectionCount(pe)
 			allAtts['originalfilename'] = getOriginalFilename(pe)
 	
