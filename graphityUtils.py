@@ -24,6 +24,9 @@ def gimmeDatApiName(wholeString):
 	elif '.exe_' in wholeString:
 		apiName = wholeString.split('.exe_')[1].replace(']','')
 		return apiName
+	elif 'sym._' in wholeString:
+		apiName = wholeString.split('sym._')[1].replace(']','')
+		return apiName
 	else:
 		print "DAT API STRING was malformed or something, pls check %s" % wholeString
 		return wholeString

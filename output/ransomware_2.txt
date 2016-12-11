@@ -1,0 +1,175 @@
+* 2016-11-25 16:26:52.920998 R2 started analysis 
+* 2016-11-25 16:26:55.633645 R2 finished analysis
+* 2016-11-25 16:27:12.542669 Graph created with NetworkX 
+DANGLING API CALL 0x40a4d2 call dword [sym.imp.KERNEL32.dll_VirtualFree]
+DANGLING API CALL 0x40b139 call dword [sym.imp.KERNEL32.dll_SetLastError]
+DANGLING API CALL 0x40b274 call dword [sym.imp.KERNEL32.dll_SetLastError]
+DANGLING API CALL 0x410927 call dword [sym.imp.ole32.dll_CoUninitialize]
+DANGLING API CALL 0x40b1aa call dword [sym.imp.KERNEL32.dll_SetLastError]
+DANGLING API CALL 0x40a4e6 call dword [sym.imp.KERNEL32.dll_OpenProcess]
+DANGLING API CALL 0x40b213 call dword [sym.imp.KERNEL32.dll_SetLastError]
+* 2016-11-25 16:27:18.334807 Graph extended with API calls, 850 calls in total, 7 dangling w/o function reference 
+* 2016-11-25 16:27:18.674472 Graph extended with string references 
+.
+General graph info:
+SAMPLE ransom1
+Type: PE32 executable (GUI) Intel 80386, for MS Windows
+Size: 114688
+MD5: 9a7f87c91bf7e602055a5503e80e2313
+Name: 
+Type: DiGraph
+Number of nodes: 484
+Number of edges: 1307
+Average in degree:   2.7004
+Average out degree:   2.7004
+.
+Graph measurement data:
+   493 Total functions detected with 'aflj'
+  2502 Count of references to local functions
+     0 Count of references to data section, global variables
+     0 Count of references to unrecognized locations
+   850 Total API refs found via symbol xref check
+     7 Count APIs w/o function xref
+   118 Total referenced Strings
+     0 Count of dangling strings (w/o function reference)
+  1620 Count of strings w/o any reference
+.
+PE details:
+Imphash:		e58257679a7b694b926252a661453ab3
+Compilation time:	2016-02-23 08:07:31
+Entrypoint address:	0x6bed
+Entrypoint section:	.text|0
+TLS section count:	0
+Original filename:	
+Section count:		5
+Section details:
+   .text    81408 6.63818822145
+  .rdata    15872 6.6011769535
+   .data     3072 4.12824777917
+   .rsrc     7680 7.96772070636
+  .reloc     5632 5.19527889732
+.
+Fat node detection with out-degree centrality, count calls, count strings:
+0x4067f0 0.070393 23 2
+0x406bed 0.039337 12 0
+0x4048e9 0.031056 1 2
+0x412872 0.028986 0 0
+0x403f8a 0.026915 22 0
+0x406428 0.026915 11 0
+0x412c5a 0.026915 0 0
+0x407ed4 0.026915 2 1
+0x403006 0.026915 9 0
+0x40ca15 0.026915 0 0
+0x407818 0.024845 10 0
+0x411aa2 0.024845 0 0
+0x409615 0.024845 0 1
+0x41246f 0.022774 0 0
+0x40227e 0.020704 6 1
+0x408600 0.020704 0 0
+0x402665 0.020704 1 1
+0x412684 0.020704 0 0
+0x40cb86 0.020704 0 0
+0x40ce25 0.020704 1 1
+.
+Histogram of out degree centrality:
+0.0 0.0005 0.001 0.0015 0.002 0.004 0.006 0.008 0.01 0.02 0.03 0.04 0.05 0.06 0.07 0.08 0.09 0.1 0.2 0.3 0.4 0.5 
+115 0 0 0 88 91 59 46 64 18 2 0 0 0 1 0 0 0 0 0 0 
+.
+Loose nodes 75 of total 484, thats 15.495868%
+.
+ExecSize FunctionCount ApiCount StringCount
+81408 493 850 118
+Per-Kilobyte ratio
+6.0559158805 10.4412342767 1.44948899371
+.
+Average degree connectivity per degree k:
+  0 0.000000
+  1 9.473684
+  2 19.226562
+  3 19.052381
+  4 20.892361
+  5 19.734545
+  6 17.311111
+  7 20.889610
+  8 15.736111
+  9 16.594771
+ 10 21.366667
+ 11 13.220779
+ 12 10.138889
+ 13 19.246154
+ 14 11.023810
+ 15 9.333333
+ 16 8.859375
+ 19 20.789474
+ 20 0.100000
+ 22 3.227273
+ 23 4.391304
+ 24 0.000000
+ 29 0.000000
+ 35 9.257143
+ 37 0.108108
+ 41 0.000000
+ 42 0.000000
+135 0.800000
+ 87 0.114943
+.
+Found 4 calls to GetProcAddress
+.
+* 2016-11-25 16:27:19.411253 Scanning for API patterns 
+For WSASEND found {'WSAStartup': '0x407818', 'gethostbyname': '0x40e18a', 'send': '0x407818'}
+For LOADRSRC found {'FindResource': '0x4058a2', 'LoadResource': '0x4058a2', 'LockResource': '0x4058a2'}
+For LOADRSRC found {'FindResource': '0x401000', 'LoadResource': '0x401000', 'LockResource': '0x401000'}
+For REGSETVAL found {'RegOpenKey': '0x402d24', 'RegSetValue': '0x402c9e'}
+For REGSETVAL found {'RegOpenKey': '0x410af6', 'RegSetValue': '0x410cd0'}
+For WINDOW found {'RegisterClass': '0x406677', 'DispatchMessage': '0x406677', 'CreateWindow': '0x406677'}
+For CREATETHREAD found {'CreateThread': '0x40e461'}
+For CREATETHREAD found {'CreateThread': '0x403295'}
+For CREATETHREAD found {'CreateThread': '0x410087'}
+For CREATETHREAD found {'CreateThread': '0x408eee'}
+For CREATETHREAD found {'CreateThread': '0x403006'}
+For PROCESSITER found {'CreateToolhelp32Snapshot': '0x4016e0', 'Process32First': '0x4016e0', 'Process32Next': '0x4016e0'}
+For PROCESSITER found {'CreateToolhelp32Snapshot': '0x408db8', 'Process32First': '0x408db8', 'Process32Next': '0x408db8'}
+For PROCESSITER found {'CreateToolhelp32Snapshot': '0x40a601', 'Process32First': '0x40a582', 'Process32Next': '0x40a582'}
+For PROCESSITER found {'CreateToolhelp32Snapshot': '0x4011f4', 'Process32First': '0x4011f4', 'Process32Next': '0x4011f4'}
+For PROCESSITER found {'CreateToolhelp32Snapshot': '0x40a39e', 'Process32First': '0x40a39e', 'Process32Next': '0x40a39e'}
+For APILOADING2 found {'GetModuleHandle': '0x40b702', 'GetProcAddress': '0x40b702'}
+For APILOADING2 found {'GetModuleHandle': '0x403f47', 'GetProcAddress': '0x403f47'}
+For APILOADING2 found {'GetModuleHandle': '0x40a62b', 'GetProcAddress': '0x40a62b'}
+For CREATEPROC found {'CreateProcess': '0x40a9ab'}
+For CREATEPROC found {'CreateProcess': '0x408ff2'}
+For CREATEPROC found {'CreateProcess': '0x405052'}
+For CREATEPROC found {'CreateProcess': '0x406309'}
+For CREATEPROC found {'CreateProcess': '0x40318b'}
+For CREATEPROC found {'CreateProcess': '0x406428'}
+For READFILE found {'CreateFile': '0x403f8a', 'ReadFile': '0x403f8a'}
+For EXITSYSTEM found {'ExitWindows': '0x403006'}
+For REGQUERY found {'RegQueryValue': '0x40227e', 'RegOpenKey': '0x40227e'}
+For REGQUERY found {'RegQueryValue': '0x401b25', 'RegOpenKey': '0x402406'}
+For REGQUERY found {'RegQueryValue': '0x40377a', 'RegOpenKey': '0x403cec'}
+For REGQUERY found {'RegQueryValue': '0x4097fa', 'RegOpenKey': '0x4097fa'}
+For REGQUERY found {'RegQueryValue': '0x40377a', 'RegOpenKey': '0x40377a'}
+For REGQUERY found {'RegQueryValue': '0x40b767', 'RegOpenKey': '0x40b767'}
+For REGQUERY found {'RegQueryValue': '0x40377a', 'RegOpenKey': '0x403aa0'}
+For REGQUERY found {'RegQueryValue': '0x410a8d', 'RegOpenKey': '0x410af6'}
+For REGQUERY found {'RegQueryValue': '0x408e72', 'RegOpenKey': '0x408e72'}
+For SHELLEXEC found {'ShellExecute': '0x404e2c'}
+For SHELLEXEC found {'ShellExecute': '0x409256'}
+For SHELLEXEC found {'ShellExecute': '0x402dcc'}
+For SHELLEXEC found {'ShellExecute': '0x408eee'}
+For SHELLEXEC found {'ShellExecute': '0x408b8a'}
+For APILOADING found {'GetProcAddress': '0x405c20', 'LoadLibrary': '0x405c20'}
+For FILEITER found {'FindNextFile': '0x40c231', 'FindClose': '0x40c231', 'FindFirstFile': '0x40c231'}
+For FILEITER found {'FindNextFile': '0x409a5f', 'FindClose': '0x409a5f', 'FindFirstFile': '0x409a5f'}
+For FILEITER found {'FindNextFile': '0x41096e', 'FindClose': '0x41096e', 'FindFirstFile': '0x41096e'}
+For FILEITER found {'FindNextFile': '0x410716', 'FindClose': '0x410716', 'FindFirstFile': '0x410716'}
+For WRITEFILE found {'WriteFile': '0x4091e6', 'CreateFile': '0x4091e6'}
+For WRITEFILE found {'WriteFile': '0x40461b', 'CreateFile': '0x40461b'}
+For WRITEFILE found {'WriteFile': '0x405139', 'CreateFile': '0x405139'}
+For WRITEFILE found {'WriteFile': '0x403f8a', 'CreateFile': '0x403f8a'}
+* 2016-11-25 16:27:19.435900 Stuffs all finished 
+
+__..--*** I WANNA BE A BENCHMARK WHEN I GROW UP ***--..__
+__ 2.712296 R2 Analysis
+__ 23.102750 Graph construction
+__ 0.674854 Info
+__ 0.024621 Behavior

@@ -15,7 +15,7 @@ def toNeo(graphity, mySha1, myFileSize, myBinType):
 	# receives the NetworkX graph and accompanying sample data
 	# pushes the graph to Neo4J
 	
-	py2neo.authenticate("localhost:7474", "<USERNAME>", "<PASS>")
+	py2neo.authenticate("localhost:7474", "neo4j", "neo4j")
 	neoGraph = py2neo.Graph("http://localhost:7474/")
 	
 	# flush of the DB, DEACTIVATE for mass storing of samples
